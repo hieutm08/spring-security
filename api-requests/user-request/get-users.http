@@ -1,4 +1,0 @@
-GET http://localhost:8080/security/users
-Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJ5b3VyLW5hbWUiLCJzdWIiOiJhZG1pbiIsImV4cCI6MTc0NTIwMzgzMiwiaWF0IjoxNzQ1MjAwMjMyLCJhdXRob3JpdGllcyI6IlJPTEVfVVNFUiJ9.gfIzoFPmyM3yvc3x-FOp_5mj8RSrx56JMc9O2Iz-taj1j-IOrlOZ_0yXB4DllRpKjjGWJcm3Yu78vD6ZsqvW2A
-
-

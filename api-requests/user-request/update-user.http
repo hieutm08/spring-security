@@ -1,9 +1,0 @@
-PUT http://localhost:8080/security/users/7fb45948-b05a-4c73-844a-0cc006730171
-Content-Type: application/json
-
-{
-  "password": "password",
-  "firstName": "john",
-  "lastName": "dock",
-  "dateOfBirth": "1999-12-01"
-}

@@ -1,8 +1,0 @@
-#### Post
-POST http://localhost:8080/security/auth/log-in
-Content-Type: application/json
-
-{
-  "username": "admin",
-  "password": "admin"
-}

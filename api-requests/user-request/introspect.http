@@ -1,7 +1,0 @@
-### GET request to example server
-POST http://localhost:8080/security/auth/introspect
-Content-Type: application/json
-
-{
-  "token": "eyJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJ5b3VyLW5hbWUiLCJzdWIiOiJhYmNAMTIzNCIsImV4cCI6MTc0NTA0NjQwOSwiaWF0IjoxNzQ1MDQyODA5LCJhdXRob3JpdGllcyI6IlJPTEVfVVNFUiJ9.-TaUylvubKpUNNCExpOSkm8V994EqBKgwTAF8uqBBxWvSx75NVlZGvSP5bbZvd0MSM6DXT3DCjyKIUXX5pAXlg"
-}
