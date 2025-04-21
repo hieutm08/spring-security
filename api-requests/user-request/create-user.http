@@ -1,0 +1,11 @@
+#### Post
+POST http://localhost:8080/security/users
+Content-Type: application/json
+
+{
+    "username": "abc@123 ",
+    "password": "12345678",
+    "firstName": "john",
+    "lastName": "kennedy",
+    "dateOfBirth": "1999-12-01"
+}

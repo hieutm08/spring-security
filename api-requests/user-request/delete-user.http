@@ -1,0 +1,2 @@
+DELETE http://localhost:8080/security/users/224d92dd-c8f6-43ec-98ce-bd2f92f12596
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJ5b3VyLW5hbWUiLCJzdWIiOiJhYmNAMTIzNCIsImV4cCI6MTc0NTIwMjk1NCwiaWF0IjoxNzQ1MTk5MzU0LCJhdXRob3JpdGllcyI6IlJPTEVfVVNFUiJ9.dkslXBUNQgU1PcyBpaCsGISC6Mc-J5dD0okyMwKWiJTyCwSeS9pPLnOb5kY0zWb-Xkim0OPe8Peu2RGFjMj-yA
