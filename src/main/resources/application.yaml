@@ -1,0 +1,19 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /security
+spring:
+  application:
+    name: security
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: "jdbc:postgresql://localhost:5432/sql_test"
+    username: postgres
+    password: solekia
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+jwt:
+  signerKey: "l6A/smSdKmjeVw4QFCWqQe1AIS94VURItOMQT/LNod0yDwftS1KFbJPwMVcnxjAk"
