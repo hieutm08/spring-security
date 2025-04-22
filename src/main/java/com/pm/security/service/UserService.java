@@ -3,11 +3,12 @@ package com.pm.security.service;
 import com.pm.security.dto.request.UserCreationRequest;
 import com.pm.security.dto.request.UserUpdateRequest;
 import com.pm.security.dto.response.UserResponse;
+import com.pm.security.entity.Role;
 import com.pm.security.entity.User;
-import com.pm.security.enums.Role;
 import com.pm.security.exception.AppException;
 import com.pm.security.exception.ErrorCode;
 import com.pm.security.mapper.UserMapper;
+import com.pm.security.repository.RoleRepository;
 import com.pm.security.repository.UserRepository;
 import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
@@ -30,6 +31,7 @@ public class UserService {
     UserRepository userRepository;
     UserMapper userMapper;
     PasswordEncoder passwordEncoder;
+    RoleRepository roleRepository;
 
     public User createUser(UserCreationRequest request) {
         if (userRepository.existsByUsername(request.getUsername())) {
@@ -37,14 +39,11 @@ public class UserService {
         }
         User userEntity = userMapper.toUser(request);
         userEntity.setPassword(passwordEncoder.encode(request.getPassword()));
-
-        HashSet<String> roles = new HashSet<>();
-        roles.add(Role.USER.name());
-        userEntity.setRoles(roles);
         return userRepository.save(userEntity);
     }
 
-    @PreAuthorize("hasRole('ADMIN')")
+    //@PreAuthorize("hasRole('ADMIN')")
+    @PreAuthorize("hasAuthority('APPROVE_DATA')")
     public List<UserResponse> getUsers() {
         return userRepository.findAll().stream().map(userMapper::toUserResponse).toList();
     }
@@ -59,6 +58,10 @@ public class UserService {
         User user = userRepository.findById(userId).
                 orElseThrow(() -> new RuntimeException("User not found"));;
         userMapper.updateUser(user, userUpdate);
+        user.setPassword(passwordEncoder.encode(userUpdate.getPassword()));
+
+        var role = roleRepository.findAllById(userUpdate.getRoles());
+        user.setRoles(new  HashSet<>(role));
 
         return userMapper.toUserResponse(userRepository.save(user));
     }

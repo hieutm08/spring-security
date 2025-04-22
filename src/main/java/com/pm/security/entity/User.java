@@ -9,7 +9,8 @@ import java.util.Set;
 
 
 @Entity
-@Data
+@Getter
+@Setter
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
@@ -24,5 +25,6 @@ public class User {
     String firstName;
     String lastName;
     LocalDate dateOfBirth;
-    Set<String> roles;
+    @ManyToMany
+    Set<Role> roles;
 }
